@@ -1,6 +1,6 @@
 {
   "name": "TicketService",
-  "description": "This is a coding exercise that will allow you to demonstrate how you code and your approach to a given problem.",
+  "description": "Ticket Service Project development for DWP coding challenge",
   "version": "1.0.0",
   "engines": {
     "node": ">=16.15.1"
