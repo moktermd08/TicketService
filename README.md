@@ -1,6 +1,49 @@
 # Ticket Service Project - DWP Ticketing Service test 
+ Ticket Service Project development for DWP coding challenge 
 
-## Project strucutre 
+## Plan of Action
+This section outlines the plan of action for the Ticket Service Project, breaking down the tasks to guide the development process.
+
+### Phase 1: Model and Constants
+
+1. **Model Ticket Types**: Define enums or constants for ticket types (Infant, Child, Adult).
+2. **Ticket Pricing**: Define constants for ticket prices corresponding to each ticket type.
+
+### Phase 2: Request Validation
+
+3. **Max Tickets Validation**: Implement a check for the maximum number of tickets that can be purchased.
+4. **Adult Ticket Validation**: Implement a check to ensure that Child and Infant tickets are not purchased without an accompanying Adult ticket.
+
+### Phase 3: Calculation
+
+5. **Calculate Total Price**: Implement logic to calculate the total price for the tickets based on types and counts.
+6. **Calculate Total Seats**: Implement logic to calculate the total number of seats to reserve, excluding Infants as they don't require seats.
+
+### Phase 4: Service Integration
+
+7. **Payment Service Call**: Integrate with `TicketPaymentService` to process the payment with the calculated total price.
+8. **Seat Reservation Service Call**: Integrate with `SeatReservationService` to reserve the calculated number of seats.
+
+### Phase 5: Error Handling
+
+9. **Identify Invalid Requests**: Define what constitutes an invalid ticket purchase request.
+10. **Graceful Rejections**: Implement logic to reject invalid requests gracefully, possibly throwing custom exceptions.
+
+### Phase 6: Testing
+
+11. **Unit Tests**: Write unit tests to cover the calculation logic.
+12. **Mock Tests**: Write mock tests to simulate and verify interactions with external services like `TicketPaymentService` and `SeatReservationService`.
+13. **Error Handling Tests**: Test how the application handles invalid scenarios and edge cases.
+
+### Phase 7: Documentation
+
+14. **Code Comments**: Comment the code sufficiently for readability and maintainability.
+15. **README**: Update the README file to provide all necessary information about the project, including how to set up, run, and test the code.
+
+By following this plan of action, we aim to develop a well-structured, efficient, and maintainable Ticket Service application.
+
+
+## Project structure 
 ```
 TicketService/
 ├── package.json
