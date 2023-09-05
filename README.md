@@ -1,4 +1,4 @@
-# Ticket Service Project - DWP Ticketing Service test 
+# JavaScript - DWP Ticketing Service test 
  Ticket Service Project development for DWP coding challenge 
 
 ## Plan of Action
