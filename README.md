@@ -1,5 +1,25 @@
 # Ticket Service Project - DWP Ticketing Service test 
 
+## Project strucutre 
+```
+TicketService/
+├── package.json
+├── src/
+│   ├── pairtest/
+│   │   ├── lib/
+│   │   │   ├── InvalidPurchaseException.js
+│   │   │   └── TicketTypeRequest.js
+│   │   └── TicketService.js
+│   └── thirdparty/
+│       ├── paymentgateway/
+│       │   └── TicketPaymentService.js
+│       └── seatbooking/
+│           └── SeatReservationService.js
+└── test/
+    └── TicketService.test.js
+
+```
+
 ## Table of Contents
 
 1. [Objective](#objective)
