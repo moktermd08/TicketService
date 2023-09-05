@@ -1,42 +1,6 @@
 # JavaScript - DWP Ticketing Service test 
  Ticket Service Project development for DWP coding challenge 
 
-## Plan of Action
-This section outlines the plan of action for the Ticket Service Project, breaking down the tasks to guide the development process.
-
-## Implementation Details
-
-### Validation and Calculation
-
-The `TicketService` class contains a private method `#validateAndCalculate()` which performs the following tasks:
-
-1. Validates ticket types based on available options (Adult, Child, Infant).
-2. Validates the ticket count, ensuring not more than 20 tickets are purchased.
-3. Calculates the total cost based on ticket type and quantity.
-4. Calculates the total number of seats to reserve, excluding infants as they do not require a seat.
-
-### Service Calls
-
-After successful validation and calculation, the `TicketService` class makes subsequent service calls:
-
-1. A payment request is made to `TicketPaymentService` with the total calculated cost.
-2. A seat reservation request is sent to `SeatReservationService` with the total number of seats to be reserved.
-
-### Error Handling
-
-The system is designed to handle invalid purchase requests gracefully:
-
-- If any business rule or constraint is violated, an `InvalidPurchaseException` is thrown to indicate an invalid ticket purchase request.
-
-### Testing
-
-The codebase is rigorously tested to ensure it meets all business rules and edge cases:
-
-1. Unit tests validate the ticket calculation logic.
-2. Mock tests simulate service calls to `TicketPaymentService` and `SeatReservationService`.
-
-
-
 ## Project structure 
 ```
 TicketService/
