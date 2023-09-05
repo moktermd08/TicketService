@@ -1,4 +1,4 @@
-# Ticket Service Project
+# Ticket Service Project - DWP Ticketing Service test 
 
 ## Table of Contents
 
@@ -8,8 +8,6 @@
 4. [Solution](#solution)
 5. [Getting Started](#getting-started)
 6. [Running the Tests](#running-the-tests)
-7. [Contributing](#contributing)
-8. [License](#license)
 
 ---
 
