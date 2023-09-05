@@ -4,43 +4,37 @@
 ## Plan of Action
 This section outlines the plan of action for the Ticket Service Project, breaking down the tasks to guide the development process.
 
-### Phase 1: Model and Constants
+## Implementation Details
 
-1. **Model Ticket Types**: Define enums or constants for ticket types (Infant, Child, Adult).
-2. **Ticket Pricing**: Define constants for ticket prices corresponding to each ticket type.
+### Validation and Calculation
 
-### Phase 2: Request Validation
+The `TicketService` class contains a private method `#validateAndCalculate()` which performs the following tasks:
 
-3. **Max Tickets Validation**: Implement a check for the maximum number of tickets that can be purchased.
-4. **Adult Ticket Validation**: Implement a check to ensure that Child and Infant tickets are not purchased without an accompanying Adult ticket.
+1. Validates ticket types based on available options (Adult, Child, Infant).
+2. Validates the ticket count, ensuring not more than 20 tickets are purchased.
+3. Calculates the total cost based on ticket type and quantity.
+4. Calculates the total number of seats to reserve, excluding infants as they do not require a seat.
 
-### Phase 3: Calculation
+### Service Calls
 
-5. **Calculate Total Price**: Implement logic to calculate the total price for the tickets based on types and counts.
-6. **Calculate Total Seats**: Implement logic to calculate the total number of seats to reserve, excluding Infants as they don't require seats.
+After successful validation and calculation, the `TicketService` class makes subsequent service calls:
 
-### Phase 4: Service Integration
+1. A payment request is made to `TicketPaymentService` with the total calculated cost.
+2. A seat reservation request is sent to `SeatReservationService` with the total number of seats to be reserved.
 
-7. **Payment Service Call**: Integrate with `TicketPaymentService` to process the payment with the calculated total price.
-8. **Seat Reservation Service Call**: Integrate with `SeatReservationService` to reserve the calculated number of seats.
+### Error Handling
 
-### Phase 5: Error Handling
+The system is designed to handle invalid purchase requests gracefully:
 
-9. **Identify Invalid Requests**: Define what constitutes an invalid ticket purchase request.
-10. **Graceful Rejections**: Implement logic to reject invalid requests gracefully, possibly throwing custom exceptions.
+- If any business rule or constraint is violated, an `InvalidPurchaseException` is thrown to indicate an invalid ticket purchase request.
 
-### Phase 6: Testing
+### Testing
 
-11. **Unit Tests**: Write unit tests to cover the calculation logic.
-12. **Mock Tests**: Write mock tests to simulate and verify interactions with external services like `TicketPaymentService` and `SeatReservationService`.
-13. **Error Handling Tests**: Test how the application handles invalid scenarios and edge cases.
+The codebase is rigorously tested to ensure it meets all business rules and edge cases:
 
-### Phase 7: Documentation
+1. Unit tests validate the ticket calculation logic.
+2. Mock tests simulate service calls to `TicketPaymentService` and `SeatReservationService`.
 
-14. **Code Comments**: Comment the code sufficiently for readability and maintainability.
-15. **README**: Update the README file to provide all necessary information about the project, including how to set up, run, and test the code.
-
-By following this plan of action, we aim to develop a well-structured, efficient, and maintainable Ticket Service application.
 
 
 ## Project structure 
